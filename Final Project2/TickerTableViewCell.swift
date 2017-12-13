@@ -23,7 +23,7 @@ class TickerTableViewCell: UITableViewCell {
     weak var delegate: TickerTableViewCellDelegate?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        titleLabel = UILabel(frame: CGRect(x: padding, y: padding, width: 100, height: 20))
+        titleLabel = UILabel(frame: CGRect(x: padding, y: padding, width: 200, height: 20))
         priceLabel = UILabel(frame: CGRect(x: UIScreen.main.bounds.width - padding - 75, y: padding, width: 100, height: 20))
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(titleLabel)
@@ -46,7 +46,7 @@ class TickerTableViewCell: UITableViewCell {
     }
     
     func setupWithTicker(ticker: Ticker) {
-        titleLabel.text = ticker.name
+        titleLabel.text = ticker.fullName
         priceLabel.text = "$" + String(ticker.currentPrice)
     }
     

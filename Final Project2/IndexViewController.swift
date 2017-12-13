@@ -18,8 +18,6 @@ class IndexViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tickers = TickerAPI.getTickersHardCoded()
         title = "Crypto Tracker"
         
         tickerTableView = UITableView(frame: view.frame, style: .plain)
@@ -37,8 +35,14 @@ class IndexViewController: UIViewController, UITableViewDelegate, UITableViewDat
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.sizeToFit()
         
+        // Create pull to refresh view and set it to the collection view's pull to refresh view
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(getTickers), for: .valueChanged)
+        tickerTableView.refreshControl = refreshControl
+        
         
         view.addSubview(tickerTableView)
+        getTickers()
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,7 +59,12 @@ class IndexViewController: UIViewController, UITableViewDelegate, UITableViewDat
             return filteredTickers.count
         }
         
-        return tickers.count
+        if let count = tickers?.count {
+            return count
+        }
+        else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -102,7 +111,7 @@ class IndexViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         filteredTickers = tickers.filter({( ticker : Ticker) -> Bool in
-            return ticker.name.lowercased().contains(searchText.lowercased())
+            return ticker.name.lowercased().contains(searchText.lowercased()) || ticker.fullName.lowercased().contains(searchText.lowercased())
         })
         
         tickerTableView.reloadData()
@@ -127,8 +136,25 @@ class IndexViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 // Set them to the view controller's posts property and update the collection view to reflect the new posts
                 self.tickers = tickers
                 
+                // Get on main thread
+                // Always update UI on main thread
+                DispatchQueue.main.async {
+                    
+                    // Call our update method
+                    self.updateCollectionView()
+                }
             }
         }
+    }
+    
+    func updateCollectionView() {
+        
+        // Reload collection view with fade animation (equivalent to collectionView.reloadData()
+        tickerTableView.reloadSections(IndexSet(integer: 0), with: .automatic)
+        
+        
+        // Stop refreshing animation
+        tickerTableView.refreshControl?.endRefreshing()
     }
     
 }

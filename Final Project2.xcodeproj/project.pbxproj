@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3135E1A01FDC4BAC0052012C /* digital_currency_list.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3135E19F1FDC4BAC0052012C /* digital_currency_list.csv */; };
 		318A23551FD79D980042B3E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A23541FD79D980042B3E8 /* AppDelegate.swift */; };
-		318A23571FD79D980042B3E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A23561FD79D980042B3E8 /* ViewController.swift */; };
 		318A235C1FD79D980042B3E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 318A235B1FD79D980042B3E8 /* Assets.xcassets */; };
 		318A235F1FD79D980042B3E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 318A235D1FD79D980042B3E8 /* LaunchScreen.storyboard */; };
 		318A23671FD79DB00042B3E8 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318A23661FD79DB00042B3E8 /* IndexViewController.swift */; };
@@ -21,9 +21,9 @@
 
 /* Begin PBXFileReference section */
 		0B9C110FFBC148219AF520E0 /* Pods-Final Project2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final Project2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Final Project2/Pods-Final Project2.debug.xcconfig"; sourceTree = "<group>"; };
+		3135E19F1FDC4BAC0052012C /* digital_currency_list.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = digital_currency_list.csv; sourceTree = "<group>"; };
 		318A23511FD79D980042B3E8 /* Final Project2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Final Project2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		318A23541FD79D980042B3E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		318A23561FD79D980042B3E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		318A235B1FD79D980042B3E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		318A235E1FD79D980042B3E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		318A23601FD79D980042B3E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,13 +77,13 @@
 		318A23531FD79D980042B3E8 /* Final Project2 */ = {
 			isa = PBXGroup;
 			children = (
+				3135E19F1FDC4BAC0052012C /* digital_currency_list.csv */,
 				318A23541FD79D980042B3E8 /* AppDelegate.swift */,
 				318A23661FD79DB00042B3E8 /* IndexViewController.swift */,
 				318A23681FD79DC80042B3E8 /* Ticker.swift */,
 				318A236A1FD79DDA0042B3E8 /* TickerAPI.swift */,
 				318A236C1FD79DE80042B3E8 /* TickerDetailViewController.swift */,
 				318A236E1FD79E0A0042B3E8 /* TickerTableViewCell.swift */,
-				318A23561FD79D980042B3E8 /* ViewController.swift */,
 				318A235B1FD79D980042B3E8 /* Assets.xcassets */,
 				318A235D1FD79D980042B3E8 /* LaunchScreen.storyboard */,
 				318A23601FD79D980042B3E8 /* Info.plist */,
@@ -163,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				318A235F1FD79D980042B3E8 /* LaunchScreen.storyboard in Resources */,
+				3135E1A01FDC4BAC0052012C /* digital_currency_list.csv in Resources */,
 				318A235C1FD79D980042B3E8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,13 +179,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Final Project2/Pods-Final Project2-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/CSV.swift/CSV.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CSV.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,7 +234,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				318A236D1FD79DE80042B3E8 /* TickerDetailViewController.swift in Sources */,
-				318A23571FD79D980042B3E8 /* ViewController.swift in Sources */,
 				318A236F1FD79E0A0042B3E8 /* TickerTableViewCell.swift in Sources */,
 				318A23691FD79DC80042B3E8 /* Ticker.swift in Sources */,
 				318A236B1FD79DDA0042B3E8 /* TickerAPI.swift in Sources */,
